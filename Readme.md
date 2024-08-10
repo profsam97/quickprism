@@ -63,7 +63,7 @@ docker compose up -d
 2. `Run locally`
 
 - **Clone the Repository:**
-  - **https:** git clone git@github.com:profsam97/quickprism.git
+  - **https:** git clone https://github.com/profsam97/quickprism.git
   - **ssh:** git clone git@github.com:profsam97/quickprism.git
 
 -**Install the dependencies:**
@@ -448,7 +448,7 @@ This service let authenticated users to:
 - **Update a bill, which will automatically update the inventory**
 - **Delete a bill**
 
-> ## Inventory
+> ## Bill
 
 - [Get bills](#get-bill)
 - [Get bill](#get-single-bill)
