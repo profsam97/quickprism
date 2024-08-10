@@ -1,0 +1,29 @@
+version : '3'
+services:
+  server:
+    platform: linux/arm64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+        # for the mongo_url, the @ should be the container name, which is in this case web_db
+        Mongo_URL: 'mongodb://root:example@web_db:27017/'
+        JWT_SECRET: 'Montreal'
+        PORT: 5000 
+    depends_on: ['web_db'] 
+  
+  web_db:
+    image: mongo
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+    restart: always
+    # port:
+    #   - 8081 :12700
+    volumes:
+      - webapp:/data/db
+
+volumes:
+ webapp: {}
