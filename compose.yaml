@@ -10,7 +10,7 @@ services:
     environment:
         # for the mongo_url, the @ should be the container name, which is in this case web_db
         Mongo_URL: 'mongodb://root:example@web_db:27017/'
-        JWT_SECRET: 'Montreal'
+        JWT_SECRET: 'QuickPrism'
         PORT: 5000 
     depends_on: ['web_db'] 
   
